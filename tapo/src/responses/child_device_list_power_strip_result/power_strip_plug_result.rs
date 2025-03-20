@@ -34,11 +34,11 @@ impl TapoResponseExt for ChildDeviceListPowerStripResult {}
 #[cfg_attr(feature = "python", pyo3::prelude::pyclass(get_all))]
 #[allow(missing_docs)]
 pub struct PowerStripPlugResult {
-    pub auto_off_remain_time: u64,
-    pub auto_off_status: AutoOffStatus,
+    // pub auto_off_remain_time: u64,
+    // pub auto_off_status: AutoOffStatus,
     pub avatar: String,
-    pub bind_count: u8,
-    pub category: String,
+    // pub bind_count: u8,
+    // pub category: String,
     pub device_id: String,
     pub device_on: bool,
     pub fw_id: String,
@@ -53,7 +53,7 @@ pub struct PowerStripPlugResult {
     pub nickname: String,
     pub oem_id: String,
     /// The time in seconds this device has been ON since the last state change (On/Off).
-    pub on_time: u64,
+    // pub on_time: u64,
     pub original_device_id: String,
     pub overheat_status: OverheatStatus,
     pub position: u8,

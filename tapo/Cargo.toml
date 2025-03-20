@@ -26,7 +26,7 @@ serde = { workspace = true, features = ["derive", "serde_derive"] }
 serde_json = { workspace = true }
 serde_with = "3.12"
 thiserror = "2.0"
-tokio = { workspace = true, features = ["sync"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "io-std"] }
 uuid = { version = "1.15", features = ["serde", "v4"] }
 
 # security
@@ -45,3 +45,7 @@ pyo3 = { workspace = true, features = ["serde", "chrono"], optional = true }
 [dev-dependencies]
 pretty_env_logger = "0.5"
 tokio = { workspace = true, features = ["rt-multi-thread", "macros"] }
+
+[[bin]]
+name = "tapo_306_strip"
+path = "src/tapo_smart_outlet_306.rs"
