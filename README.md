@@ -158,3 +158,45 @@ Inspired by [petretiandrea/plugp100][inspired_by].
 [tapo_rest]: https://github.com/ClementNerma/tapo-rest
 [contributing]: https://github.com/mihai-dinculescu/tapo/blob/main/CONTRIBUTING.md
 [inspired_by]: https://github.com/petretiandrea/plugp100
+
+
+### Builds rust binary: `tapo-cli` [supports P115 plugs and P306 strip]
+
+```
+>>> tapo-cli/target/debug/tapo-cli --help
+
+Usage: tapo-cli <tapo_username> <tapo_password> <device_type> <device_ip> <device_command> [-n <device-nickname>]
+
+all device information necessary to run commands
+
+Positional Arguments:
+  tapo_username     the tapo username
+  tapo_password     the tapo username
+  device_type       the device type [plug,strip]
+  device_ip         the ip of the device
+  device_command    the command to run on the device
+
+Options:
+  -n, --device-nickname
+                    the device nickname in the tapo app
+  -h, --help, help  display usage information
+
+
+```
+
+
+> Example Usage:
+
+```
+tapo-cli on 'xxxxxxxx@hotmail.com' 'xxxx' 'plug' '192.168.50.15'
+tapo-cli on 'xxxxxxxx@hotmail.com' 'xxxx' 'strip' '192.168.50.123' -n "Dummy Plug"
+
+tapo-cli off 'xxxxxxxx@hotmail.com' 'xxxx' 'plug' '192.168.50.15'
+tapo-cli off 'xxxxxxxx@hotmail.com' 'xxxx' 'strip' '192.168.50.123' -n "Dummy Plug"
+
+tapo-cli reboot 'xxxxxxxx@hotmail.com' 'xxxx' 'plug' '192.168.50.15'
+tapo-cli reboot 'xxxxxxxx@hotmail.com' 'xxxx' 'strip' '192.168.50.123' -n "Dummy Plug"
+
+tapo-cli info 'xxxxxxxx@hotmail.com' 'xxxx' 'plug' '192.168.50.15'
+tapo-cli info 'xxxxxxxx@hotmail.com' 'xxxx' 'strip' '192.168.50.123' -n "Dummy Plug"
+```

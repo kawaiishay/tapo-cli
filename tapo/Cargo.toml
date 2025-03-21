@@ -28,6 +28,7 @@ serde_with = "3.12"
 thiserror = "2.0"
 tokio = { version = "1", features = ["macros", "rt-multi-thread", "io-std"] }
 uuid = { version = "1.15", features = ["serde", "v4"] }
+argh = "0.1"
 
 # security
 aes = "0.8"
@@ -47,5 +48,5 @@ pretty_env_logger = "0.5"
 tokio = { workspace = true, features = ["rt-multi-thread", "macros"] }
 
 [[bin]]
-name = "tapo_306_strip"
-path = "src/tapo_smart_outlet_306.rs"
+name = "tapo-cli"
+path = "src/tapo_smart_control.rs"
